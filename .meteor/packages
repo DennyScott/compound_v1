@@ -8,3 +8,6 @@ autopublish
 insecure
 velocity:html-reporter
 iron:router
+fourseven:scss
+reywood:bootstrap3-sass
+
