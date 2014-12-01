@@ -1,0 +1,28 @@
+<!-- off canvas menu -->
+<template name='loggedIn'>
+<div>
+    <nav class="app-menu">
+        <div id="close" class="close-lines-box">
+        <span class="close-lines"></span>
+        </div>
+        <ul class="off-nav">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+        </ul>
+    </nav>
+    <!-- clickable overlay -->
+    <div id="overlay" class="content-overlay ease"></div>
+    <!-- page content -->
+    <div id="content" class="content ease">
+        <header>
+            <button id="menu-icon" class="menu-toggle lines-button" type="button" role="button">
+            <span class="lines"></span>
+            </button>
+        </header>
+        {{> yield}}
+    </div>
+    
+</div>
+</template>
