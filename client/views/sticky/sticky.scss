@@ -1,0 +1,87 @@
+@import url(http://fonts.googleapis.com/css?family=Reenie+Beanie);
+
+@mixin box-shadow($shadow) {
+    -webkit-box-shadow: $shadow;
+    moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+
+@mixin transform($trans) {
+    -webkit-transform: $trans;
+    -o-transform: $trans;
+    -mox-transform: $trans;
+}
+
+@mixin transition($trans) {
+    -moz-transition: -moz-transform $trans;
+    -o-transition: -o-transform $trans;
+    -webkit-transition: -webkit-transform $trans;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    body {
+        h2, p {
+            font-size: 100%;
+            font-weight: normal;
+        }
+        ul, li {
+            list-style: none;
+        }
+        .stickies {
+            overflow: hidden;
+            padding: 3em;
+            li {
+                margin: 1em;
+                float: left;
+                h2 {
+                    font-size: 140%;
+                    font-weight: bold;
+                    padding-bottom: 10px;
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                }
+                p {
+                    font-family: "Reenie Beanie", arial, sans-serif;
+                    font-size: 180%;
+                }
+                a {
+                    text-decoration: none;
+                    color: #000;
+                    background: #ffc;
+                    display: block;
+                    height: 10em;
+                    width: 10em;
+                    padding: 1em;
+                    @include transform(rotate(-6deg));
+                    @include box-shadow(5px 5px 7px rgba(33, 33, 33, 0.7));
+                    @include transition(0.15s linear);
+                }
+            }
+            li:nth-child(even) a {
+                @include transform(rotate(4deg));
+                position: relative;
+                top: 5px;
+                background:#cfc;
+            }
+            li:nth-child(3n) a {
+                @include transform(roatate(-3deg));
+                position: relative;
+                top: -5px;
+                background:#ccf;
+            }
+            li:nth-child(5n) a {
+                @include transform(rotate(5deg));
+                position: relative;
+                top: -10px;
+            }
+            a:hover, a:focus {
+                @include box-shadow(10px 10px 7px rgba(0, 0, 0, 0.7)!important);
+                @include transform(scale(1.25)!important);
+                position: relative;
+                z-index: 5;
+            }
+        }
+    }
+}
